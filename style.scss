@@ -1,0 +1,663 @@
+$gray: #C7C7C7;
+$dark-gray: #818181;
+$blue: #4A1ABB;
+$white: #FFF;
+$dark: #1C1E20;
+
+@mixin breakpoint($point) {
+    @if $point == lg {
+        @media (max-width: 1161px) {
+            @content;
+        }
+    }
+    @else if $point == md {
+        @media (max-width: 861px) {
+            @content;
+        }
+    }
+    @else if $point == sm {
+        @media (max-width: 625px) {
+            @content;
+        }
+    }
+    @else if $point == xs {
+        @media (max-width: 395px) {
+            @content;
+        }
+    }
+}
+
+
+.button-circle {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #C7C7C7;
+    border-radius: 50%;
+    background-color: $white;
+    cursor: pointer;
+}
+.cancel {
+    width: 105px;
+    height: 40px;
+    border: 1px solid $gray;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+}
+.save {
+    width: 112px;
+    height: 40px;
+    border: none;
+    background-color: $blue;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 20px;
+    color: $white;
+    cursor: pointer;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+}
+.wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    @include breakpoint (xs) {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+.header {
+    background-color: $white;
+    border-bottom: 1px solid $gray;
+}
+.header__navigation {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    align-items: center;
+    .header {
+        &__logo {
+            font-size: 20px;
+            font-weight: 700;
+            p {
+                margin: 0;
+            }
+        }
+        &__menu {
+            display: flex;
+        }
+        &__item {
+            list-style-type: none;
+            margin-right: 24px;
+            &:last-child {
+                display: none;
+            }
+        }
+        &__link {
+            text-decoration: none;
+            color: $dark;
+            font-weight: 700;
+            font-size: 15px;
+            transition: 0.2s;
+            &:hover {
+                color: $blue;
+            }
+        }
+        &__container {
+            display: flex;
+        }
+        &__user {
+            display: flex;
+            align-items: center;
+            p {
+                margin-right: 24px;
+                margin-left: 36px;
+            }
+        }
+        &__profile {
+            display: none;
+        }
+        &__img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    @include breakpoint (md) {
+    align-items: center;
+    padding: 23px 0 23px 0;
+        .container{
+            width: 40px;
+        }
+        .content-wrapper{
+            width: 100%;
+        }
+        .header {
+            &__logo {
+                padding-left: 8px;
+            }
+            &__nav {
+                display: block;
+                position: absolute;
+                top: 55px;
+                left: 0;
+                background: $white;
+                width: 100%;
+                left: -100%;
+                transition: all 0.4s ease;
+                z-index: 2;
+                height: 117%;
+            }
+            &__menu {
+                display: block;
+                padding: 0;
+                margin-top: 25px;
+            }
+            &__item {
+                margin: 0px 0px 24px 16px;
+                &:last-child {
+                    display: block;
+                }
+            }
+            &__link {
+                font-size: 24px;
+            }
+            &__user {
+                display: none;
+            }
+            &__profile {
+                display: flex;
+                align-items: center;
+                margin-top: 138px;
+                padding-bottom: 30px;
+                p {
+                    font-size: 15px;
+                    font-weight: 700;
+                    margin: 0;
+                }
+                .desc {
+                    padding-left: 16px;
+                }
+                button {
+                    font-size: 15px;
+                    font-weight: 700;
+                    color: $blue;
+                    border: none;
+                    background: transparent;
+                    padding: 0;
+                }
+            }
+            .content-wrapper {
+                margin-top: 78px;
+                padding: 10px;
+                line-height: 34px;
+            }
+        }
+        .menu-burger__header {
+            position: relative; 
+            width: 40px;
+            height: 35px;
+            display: block;
+        }
+        .menu-burger__header span, .menu-burger__header:after, .menu-burger__header:before{
+            height: 3px;
+            width: 25px;
+            position: absolute;
+            background: $dark;
+            margin: 0 auto;
+            border-radius: 20px;
+        }
+        .menu-burger__header span{
+            top: 18px;
+        }
+        .menu-burger__header:after, .menu-burger__header:before{
+            content: '';
+        }
+        .menu-burger__header:after{
+            bottom: 5px;
+        }
+        .menu-burger__header:before{
+            top: 9px;
+        }
+        .header__nav.open-menu {
+            left: 0;
+        }
+        .menu-burger__header.open-menu span {
+            opacity:0; 
+            transition: 0.5s; 
+        }
+        .menu-burger__header.open-menu:before {
+            transform: rotate(38deg);
+            top: 16px;
+            transition: 0.4s;
+        }
+        .menu-burger__header.open-menu:after {
+            transform: rotate(-38deg);
+            bottom: 16px;
+            transition: 0.4s;
+        }
+    }
+    
+
+    
+    
+    &__logo {
+        p {
+            margin: 0;
+        }
+        @include breakpoint (md) {
+            width: 32%;
+            p {
+                font-size: 24px;
+                font-weight: 700;
+            }
+        }
+        
+    }
+    &__link {
+        text-decoration: none;
+        color: $dark;
+        &:hover {
+            color: $blue;
+        }
+    }
+    &__profile {
+        display: none;
+        @include breakpoint (sm) {
+            display: flex;
+            margin-top: 130px;
+        }
+        .desc {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-left: 16px;
+        }
+        p {
+            font-size: 15px;
+            font-weight: 700;
+            margin: 0;
+            padding-bottom: 4px;
+        }
+        img {
+            width: 80px;
+            height: 80px;
+        }
+        button {
+            background-color: transparent;
+            color: $blue;
+            font-size: 15px;
+            border: none;
+            font-weight: 700;
+            padding: 0;
+            margin-top: 4px;
+            cursor: pointer;
+        }
+    }
+    &__user {
+        display: flex;
+        align-items: center;
+        p {
+            margin-right: 24px;
+        }
+        img {
+            height: 40px;
+        }
+    }
+}
+
+
+
+.main {
+    &__title-menu {
+        display: flex;
+        @include breakpoint (md) {
+            justify-content: space-around;
+        }
+        @include breakpoint (sm) {
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    }
+    &__button {
+        margin-top: 67px;
+        max-width: 304px;
+        width: 100%;
+        display: flex;
+        cursor: pointer;
+        &:hover {
+            color: $blue;
+        }
+        p {
+            margin-top: 10px;
+            margin-left: 12px;
+            font-weight: 700;
+            font-size: 15px;
+        }
+        @include breakpoint (sm) {
+            max-width: 100%;
+            width: 100%;
+            margin-top: 29px;
+            margin-bottom: 30px;
+        }
+    }
+    &__title {
+        max-width: 850px;
+        width: 100%;
+        margin-top: 24px;
+        margin-left: 50px;
+        @include breakpoint (lg) {
+            max-width: 400px;
+        }
+        @include breakpoint (sm) {
+            max-width: 100%;
+            margin: 0;
+            text-align: center;
+        }
+        @include breakpoint (xs) {
+            text-align: left;
+            padding-left: 11px;
+        }
+    }
+    &__catalog {
+        font-weight: 400;
+        font-size: 13px;
+        color: $dark-gray;
+        a {
+            text-decoration: none;
+            color: $dark;
+            &:hover {
+                color: $blue;
+            }
+        }
+    }
+    &__access {
+        font-weight: 700;
+        font-size: 24px;
+        color: $dark;
+    }
+    &__content {
+        display: flex;
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
+    &__menu {
+        background-color: $white;
+        list-style-type: none;
+        padding: 0;
+        max-width: 260px;
+        width: 100%;
+        border-radius: 20px;
+        border: 1px solid $gray;
+        padding: 20px 20px;
+        margin: 0;
+        @include breakpoint (md) {
+            display: none;
+        }
+    }
+    &__item {
+        margin-bottom: 24px;
+    }
+    &__link {
+        text-decoration: none;
+        color: $dark;
+        font-weight: 700;
+        font-size: 15px;
+        &:hover {
+            color: $blue;
+        }
+    }
+    &__effect {
+        position: relative; 
+       &:hover::after {
+            content: ' '; 
+            position: absolute; 
+            left: -21px; 
+            width: 2px;
+            height: 20px;
+            background: $blue; 
+        }
+    }
+    &__settings {
+        background-color: $white;
+        max-width: 810px;
+        width: 100%;
+        padding: 20px;
+        border: 1px solid $gray;
+        border-radius: 20px;
+        max-height: 442px;
+        height: 100%;
+        margin-left: 50px;
+        @include breakpoint (lg) {
+            max-height: 578px;
+        }
+        @include breakpoint (md) {
+            margin-left: 0;
+            max-height: 561px;
+        }
+        @include breakpoint (sm) {
+            max-height: 643px;
+            height: 100%;
+        }
+        @include breakpoint (xs) {
+            padding: 14px;
+            h3 {
+                margin-top: 0;
+                font-size: 20px;
+            }
+            p {
+                font-size: 15px;
+                font-weight: 500;
+                color: $dark-gray;
+            }
+        }
+    }
+    &__site {
+        @include breakpoint (lg) {
+            flex-wrap: wrap;
+        }
+        display: flex;
+        h4 {
+            width: 40%;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 11px;
+            @include breakpoint (lg) {
+                width: 100%;
+            }
+        }
+        .desc {
+            margin-left: 38px;
+        } 
+    }
+    &__checkbox {
+        width: 56%;
+        @include breakpoint (lg) {
+            width: 100%;
+        }
+    }
+    &__password {
+        width: 90%;
+        margin-left: 38px;
+        border: none;
+        border-bottom: 1px solid $gray;
+        height: 43px;
+        margin-bottom: 13px;
+        &:focus {
+            outline: none;
+        }
+    }
+    &__password-text {
+        margin-left: 38px;
+        margin-top: 22px;
+    }
+    &__buttons {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 38px;
+        .cancel {
+            margin-right: 12px;
+        }
+        @include breakpoint (lg) {
+            justify-content: flex-end;
+            margin-top: 15px;
+        }
+        @include breakpoint (xs) {
+            justify-content: flex-end;
+        }
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 240px;
+    margin-bottom: 16px;
+    .notice {
+        max-width: 600px;
+        width: 100%;
+        height: 40px;
+        background-color: $dark;
+        color: $white;
+        font-weight: 700;
+        font-size: 13px;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 18px;
+        @include breakpoint (sm) {
+            padding: 0 5px 0 13px;
+        }
+    }
+    @include breakpoint (sm) {
+        margin-top: 80px;
+    }
+    @include breakpoint (xs) {
+        display: none;
+    }
+}
+
+.radio {
+    font-size: 15px;
+    font-weight: 700;
+    color: $dark;
+}
+.radio input { 
+    display: none; 
+}
+.radio span {
+    position: relative; 
+    display: inline-block; 
+    width:   16px; 
+    height: 16px;
+    background: $white; 
+    border-radius: 50%; 
+    border: 2px solid $gray;
+    margin-right: 16px;
+}
+p {
+    display: block;
+}
+.radio input:checked + span {
+    background: $white;
+}
+.radio input:checked + span::before {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    background: #4A1ABB;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+  
+.burger-icon {
+    display: block;
+    position: relative;
+    right: 1%;
+    cursor: pointer;
+    top: 3px;
+} 
+.burger-nav {
+    display: block;
+    height: 40px;
+    width: 100%;
+    background-color: #cccccc;
+    background-color: lightgrey;
+    padding: 0;
+    margin: 0;
+}
+.nav {
+    overflow: hidden;
+    background: $white;
+    height: 0;
+    max-height: 0px; 
+    list-style-type: none;
+    padding-left: 0;
+}
+.nav.open {
+    height: auto;
+    max-height: 300px; 
+    width: 192px;
+    height: 252px;
+    @include breakpoint (sm) {
+        max-height: 505px;
+        height: 100%;
+        width: 300px;
+    }
+}
+.nav li {
+    font-size: 24px;
+    color: $dark;
+    font-weight: 700;
+    text-decoration: none;
+    width: 100%; 
+    margin: 0;
+}
+.nav li a {
+    text-decoration: none;
+    color: $dark;
+    padding: 10px;
+    display: block;
+    margin: 0;
+}
+.contain {
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    right: 29px;
+    top: 19px;
+}   
+.bar1, .bar2, .bar3 {
+    width: 27px;
+    transition: 0.2s;
+    height: 3px;
+    background-color: $dark;
+    margin: 7px 0;
+    border-radius: 1px;
+}
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-7px, 6px) ;
+    transform: rotate(-45deg) translate(-7px, 6px) ;
+}
+.change .bar2 {
+    opacity: 0;
+}
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+    
+
+    

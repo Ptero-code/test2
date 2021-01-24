@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="wrapper">
+            <div class="header__navigation">
+                <div class="header__logo">
+                    <p>lite.page</p>
+                </div>
+                <div class="container header__container">
+                    <div class="menu-burger__header">
+                        <span></span>
+                    </div>
+                    <nav class="header__nav">
+                        <ul class="menu header__menu">
+                            <li class="header__item"><a href="" class="header__link">CRM</a></li>
+                            <li class="header__item"><a href="" class="header__link">Мои сайты</a></li>
+                            <li class="header__item"><a href="" class="header__link">Каталог</a></li>
+                            <li class="header__item"><a href="" class="header__link">Тарифы</a></li>
+                            <li class="header__item"><a href="" class="header__link">Блог</a></li>
+                            <li class="header__item"><a href="" class="header__link">Помощь</a></li>
+                        </ul>
+                        <div class="header__profile">
+                            <img class="header__img" src="img/user.png" alt="User">
+                            <div class="desc">
+                                <p>Артем Городецкий</p>
+                                <button>Выйти</button>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="header__user">
+                        <p><a class="header__link" href="#">Помощь</a></p>
+                        <img class="header__img" src="img/user.png" alt="User">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="wrapper">
+            <div class="main__title-menu">
+                <div class="main__button">
+                    <button class="button-circle"><img src="img/arrow.svg" alt=""></button>
+                    <p>Назад</p>
+                </div>
+                <div class="main__title">
+                    <div class="main__catalog"><p><a href="#">Главная</a> / <a href="#">Настройки сайта</a> / <a href="#">Доступ к сайту</a></p></div>
+                    <h2 class="main__access">Доступ к сайту</h2>
+                </div>
+            </div>
+            <div class="main__content">
+                <ul class="main__menu">
+                    <li class="main__item main__effect"><a href="#" class="main__link">Доступ к сайту</a></li>
+                    <li class="main__item main__effect"><a href="#" class="main__link">Доступ к сайту</a></li>
+                    <li class="main__item main__effect"><a href="#" class="main__link">Доступ к сайту</a></li>
+                    <li class="main__item main__effect"><a href="#" class="main__link">Доступ к сайту</a></li>
+                    <li class="main__item main__effect"><a href="#" class="main__link">Доступ к сайту</a></li>
+                    <li class="main__item main__effect"><a href="#" class="main__link">Доступ к сайту</a></li>
+                    <li class="main__item main__effect"><a href="#" class="main__link">Доступ к сайту</a></li>
+                    <li class="main__item main__effect"><a href="#" class="main__link">Доступ к сайту</a></li>
+                    <li class="main__item main__effect"><a href="#" class="main__link">Доступ к сайту</a></li>
+                    <li class="main__item main__effect"><a href="#" class="main__link">Доступ к сайту</a></li>
+                    <li class="main__item main__effect"><a href="#" class="main__link">Доступ к сайту</a></li>
+                    <li class="main__item main__effect"><a href="#" class="main__link">Доступ к сайту</a></li>
+                </ul>
+                <div class="main__settings">
+                    <h3 class="main__h3">Настройка доступа к сайту</h3>
+                    <p>Контролируйте, кому доступен ваш сайт</p>
+                    <div class="main__site">
+                        <h4>Интернет сайт</h4>
+                        <div class="main__checkbox">
+                            <p>
+                                <label class="radio"><input type="radio" id="Dest" name="user g" value="None" aria-required="true" onChange="Selected(this)" checked><span></span>Опубликовать сайт<p class="desc">Доступно при оплаченном тарифном плане и купленном домене</p></label>
+                            </p>
+                            <p>
+                                <label class="radio"><input type="radio" id="Dest" name="user g" value="Open" aria-required="true" onChange="Selected(this)"><span></span>Сайт защищен паролем
+                                <p class="desc">Сайт увидит только тот, у кого есть пароль</p>
+                                </label>
+                                <div id='Block1' style='display: none;'>
+                                    <p class="main__password-text">Введите пароль:</p>
+                                    <input class="main__password" type="password" maxlength="25" size="30" name="password">
+                                </div>
+                            </p>
+                            <p>
+                                <label class="radio"><input type="radio" id="Dest" name="user g" value="None" aria-required="true" onChange="Selected(this)"><span></span>Приватный сайт
+                                <p class="desc">Только авторы и владелец сайта смогут увидеть сайт</p>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="main__buttons">
+                        <button class="cancel">Отменить</button>
+                        <button class="save">Сохранить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="wrapper">
+            <div class="notice">Настройки доступа к сайту успешно изменены<img src="img/close.svg" alt="Close"></div>
+        </div>
+    </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
